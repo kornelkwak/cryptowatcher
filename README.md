@@ -1,5 +1,4 @@
-# 🪙 CryptoW
-atcher (In Progress)
+# 🪙 CryptoWatcher (In Progress)
 
 CryptoWatcher is a full-stack web application for monitoring cryptocurrency data. This project is currently under development and is not yet production-ready.
 
