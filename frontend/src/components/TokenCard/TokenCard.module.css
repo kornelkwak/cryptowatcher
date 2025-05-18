@@ -1,0 +1,84 @@
+.card {
+  width: 500px;
+  height: 460px;
+  border-radius: 10px;
+  background-color: #332E2E;
+  position: relative;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.logoContainer {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 50px;
+  left: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contentContainer {
+  margin-top: 220px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favoriteButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.favoriteButton button {
+  padding: 12px;
+  background-color: rgba(0,0,0,0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.favoriteButton button:hover {
+  background-color: rgba(0,0,0,0.2);
+  transform: scale(1.1);
+}
+
+.tokenName {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.tokenPrice {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+button {
+    background-color: none;
+    padding: 0;
+    transition: none;
+}
+
+button:hover {
+    background-color: none;
+    transform: none;
+}

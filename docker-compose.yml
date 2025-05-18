@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:14  # Specify version 14 to match your data
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: cryptowatcher
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: 
+      context: ./backend
+    container_name: nest_backend
+    restart: always
+    ports:
+      - '4000:4000'
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: cryptowatcher
+    volumes:
+      - ./backend:/app
+    command: npm run start:dev
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: react_frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: npm run dev
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
